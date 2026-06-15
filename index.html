@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GGRLS Software</title>
+  <meta name="description" content="GGRLS Software — building products people love." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0c0d10;
+      --bg2:      #12141a;
+      --border:   rgba(255,255,255,0.07);
+      --text:     #e8eaf0;
+      --muted:    rgba(232,234,240,0.45);
+      --hflow:    #4f46e5;
+      --wheech:   #84cc16;
+      --crujd:    #f43f5e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "DM Sans", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(12,13,16,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(20px, 5vw, 60px);
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .wordmark {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .wordmark span {
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .nav-contact {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-contact:hover { color: var(--text); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: clamp(80px, 14vw, 160px) clamp(20px, 5vw, 60px) clamp(60px, 10vw, 120px);
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: "";
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--border);
+    }
+
+    h1 {
+      font-size: clamp(40px, 7vw, 80px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.02;
+      color: var(--text);
+      text-wrap: balance;
+      margin-bottom: 28px;
+    }
+
+    h1 em {
+      font-style: normal;
+      background: linear-gradient(90deg, #a78bfa 0%, #818cf8 50%, #67e8f9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2.2vw, 20px);
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 500px;
+      margin: 0 auto;
+      text-wrap: pretty;
+    }
+
+    /* ── PRODUCTS ── */
+    .products-section {
+      padding: 0 clamp(20px, 5vw, 60px) clamp(80px, 12vw, 140px);
+    }
+
+    .products-grid {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .product-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 32px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .product-card--hflow::before  { background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(79,70,229,0.12), transparent); }
+    .product-card--wheech::before { background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(132,204,22,0.10), transparent); }
+    .product-card--crujd::before  { background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(244,63,94,0.10), transparent); }
+
+    .product-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,0.14);
+    }
+
+    .product-card:hover::before { opacity: 1; }
+
+    .product-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .product-card--hflow  .product-dot { background: var(--hflow); }
+    .product-card--wheech .product-dot { background: var(--wheech); }
+    .product-card--crujd  .product-dot { background: var(--crujd); }
+
+    .product-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .product-badge {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .product-card--hflow  .product-badge { color: var(--hflow);  background: rgba(79,70,229,0.12); }
+    .product-card--wheech .product-badge { color: var(--wheech); background: rgba(132,204,22,0.12); }
+    .product-card--crujd  .product-badge { color: var(--crujd);  background: rgba(244,63,94,0.12); }
+
+    .product-name {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .product-card--hflow  .product-name { color: #c7c4ff; }
+    .product-card--wheech .product-name { color: #d9f99d; }
+    .product-card--crujd  .product-name { color: #fda4af; }
+
+    .product-desc {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--muted);
+      flex: 1;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+      text-wrap: pretty;
+    }
+
+    .product-link-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+    }
+
+    .product-card--hflow  .product-link-row { color: #818cf8; }
+    .product-card--wheech .product-link-row { color: #a3e635; }
+    .product-card--crujd  .product-link-row { color: #fb7185; }
+
+    .product-link-row svg {
+      transition: transform 0.15s;
+    }
+
+    .product-card:hover .product-link-row svg {
+      transform: translate(2px, -2px);
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      border-top: 1px solid var(--border);
+      padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px);
+      text-align: center;
+    }
+
+    .contact-inner {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .contact-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: clamp(18px, 3vw, 24px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      padding-bottom: 4px;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .contact-email:hover {
+      color: #a5b4fc;
+      border-color: rgba(165,180,252,0.4);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: auto;
+      border-top: 1px solid var(--border);
+      padding: 28px clamp(20px, 5vw, 60px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer-dots {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .footer-dots span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* nav: keep wordmark, shrink contact to icon+short */
+      .nav-contact {
+        font-size: 12px;
+        padding: 6px 12px;
+        background: rgba(232,234,240,0.06);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        white-space: nowrap;
+      }
+
+      /* hero: remove forced line break on small screens */
+      h1 br { display: none; }
+
+      /* cards: tighter padding */
+      .product-card {
+        padding: 28px 24px 24px;
+      }
+
+      /* contact email: never overflow */
+      .contact-email {
+        font-size: 18px;
+        word-break: break-all;
+      }
+
+      footer {
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .wordmark span { display: none; }
+      .nav-contact { font-size: 11px; padding: 5px 10px; }
+      h1 { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="wordmark">GGRLS <span>Software</span></a>
+    <a href="/cdn-cgi/l/email-protection#2d4e4243594c4e596d4a4a5f415e034e42" class="nav-contact"><span class="__cf_email__" data-cfemail="6704080913060413270000150b14490408">[email&#160;protected]</span></a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-eyebrow">GGRLS Software</div>
+    <h1>Building products<br /><em>people love.</em></h1>
+    <p class="hero-sub">We make exciting software across consumer apps, professional tools, and everything in between.</p>
+  </section>
+
+  <section class="products-section">
+    <div class="products-grid">
+
+      <!-- hFlow -->
+      <a href="https://www.hflow.pro" target="_blank" rel="noopener" class="product-card product-card--hflow">
+        <div class="product-header">
+          <div class="product-dot"></div>
+          <span class="product-badge">Live</span>
+        </div>
+        <div class="product-name">hFlow</div>
+        <p class="product-desc">Student literacy and language assessment platform for schools. Track progress, visualize results, and communicate with families — all in one place.</p>
+        <div class="product-link-row">
+          View project
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5.5M11.5 2.5V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </a>
+
+      <!-- Wheech -->
+      <a href="https://www.wheech.app" target="_blank" rel="noopener" class="product-card product-card--wheech">
+        <div class="product-header">
+          <div class="product-dot"></div>
+          <span class="product-badge">Coming soon</span>
+        </div>
+        <div class="product-name">Wheech</div>
+        <p class="product-desc">Crowd-sourced fantasy football start/sit calls. Submit a matchup, vote on three others, and unlock the live crowd verdict before kickoff.</p>
+        <div class="product-link-row">
+          View project
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5.5M11.5 2.5V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </a>
+
+      <!-- Crujd -->
+      <a href="https://www.crujd.app" target="_blank" rel="noopener" class="product-card product-card--crujd">
+        <div class="product-header">
+          <div class="product-dot"></div>
+          <span class="product-badge">Coming soon</span>
+        </div>
+        <div class="product-name">Crujd</div>
+        <p class="product-desc">Chrome extension that compares your résumé to the job description on the page you're viewing — match scores and gap analysis, right in your browser.</p>
+        <div class="product-link-row">
+          View project
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5.5M11.5 2.5V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-inner">
+      <p class="contact-label">Get in touch</p>
+      <a href="/cdn-cgi/l/email-protection#f3909c9d87929087b39494819f80dd909c" class="contact-email">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <rect x="2" y="4.5" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M2 7l8 5 8-5" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+        </svg>
+        <span class="__cf_email__" data-cfemail="a9cac6c7ddc8cadde9cecedbc5da87cac6">[email&#160;protected]</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-copy">© 2026 GGRLS Software</span>
+    <div class="footer-dots">
+      <span style="background:#818cf8;"></span>
+      <span style="background:#a3e635;"></span>
+      <span style="background:#fb7185;"></span>
+    </div>
+  </footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
