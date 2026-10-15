@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boondox privacy policy — GGRLS Software</title>
+  <meta name="description" content="How Boondox uses location, elevation, anonymous footprint counts, and ads." />
+  <link rel="canonical" href="https://www.ggrls.co/boondox/privacy" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0c0d10;
+      --bg2: #12141a;
+      --border: rgba(255,255,255,0.07);
+      --text: #e8eaf0;
+      --muted: rgba(232,234,240,0.72);
+      --faint: rgba(232,234,240,0.45);
+      --link: #a5b4fc;
+    }
+    body {
+      font-family: "DM Sans", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(12,13,16,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(20px, 5vw, 60px);
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .wordmark {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .wordmark span { color: var(--faint); font-weight: 400; }
+    .nav-contact {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--faint);
+      text-decoration: none;
+    }
+    .nav-contact:hover { color: var(--text); }
+    main {
+      width: min(720px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: clamp(48px, 8vw, 88px) 0 clamp(72px, 10vw, 120px);
+    }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+    .updated {
+      color: var(--faint);
+      font-size: 14px;
+      margin-bottom: 36px;
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 650;
+      letter-spacing: -0.03em;
+      margin: 36px 0 12px;
+    }
+    p, li { font-size: 16px; line-height: 1.65; color: var(--muted); }
+    p + p { margin-top: 14px; }
+    ul { margin: 14px 0 0 1.2em; }
+    li + li { margin-top: 8px; }
+    a { color: var(--link); }
+    a:hover { color: #c7d2fe; }
+    footer {
+      margin-top: auto;
+      border-top: 1px solid var(--border);
+      padding: 28px clamp(20px, 5vw, 60px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-copy, .footer-links a {
+      font-size: 13px;
+      color: var(--faint);
+      text-decoration: none;
+    }
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a:hover { color: var(--text); }
+    @media (max-width: 600px) {
+      footer { justify-content: center; text-align: center; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="wordmark">GGRLS <span>Software</span></a>
+    <a href="mailto:contact@ggrls.co" class="nav-contact">contact@ggrls.co</a>
+  </nav>
+  <main>
+    <p class="eyebrow">Boondox</p>
+    <h1>Privacy policy</h1>
+    <p class="updated">October 14, 2026</p>
+
+    <p>Boondox is made by GGRLS Software LLC. It measures how far you are from civilization while the app is open. There is no account.</p>
+
+    <h2>Location</h2>
+    <p>When you measure, Boondox reads your location on the device. It uses that position to find the nearest place in a chart that already lives in the app, and to estimate sunset. The exact position stays on the device for the reading you are looking at. We do not store it in an account, and we do not read location in the background.</p>
+    <p>Outside the United States and Canada, the app tells you coverage is unavailable. It still needed your location to know that.</p>
+
+    <h2>Elevation</h2>
+    <p>If you are online and inside the United States or Canada, Boondox sends that latitude and longitude to <a href="https://open-meteo.com/">Open-Meteo</a> to look up elevation. Open-Meteo is a separate service. Their terms are at <a href="https://open-meteo.com/en/terms">open-meteo.com/en/terms</a>.</p>
+
+    <h2>Ghost footprints</h2>
+    <p>A search can add one to a rough area for the month. Boondox sends the coordinates to our footprints service over HTTPS. That service rounds them to a 0.1 degree cell, about 7 miles from north to south, and stores an anonymous count for that cell and month. It does not store your name, a device identifier, or the exact location.</p>
+    <p>The app remembers, on your device, which cells it has already counted, so a later search in the same cell does not add another one.</p>
+
+    <h2>Advertising</h2>
+    <p>Boondox shows one banner ad from Google AdMob. Where Google requires a choice, a consent form appears before the first ad. On iPhone, the system tracking prompt asks whether the advertising identifier may be used. If you decline, the ads are not personalized and that identifier is not sent. On Android, AdMob may use the advertising ID.</p>
+    <p>We do not receive the advertising identifier on our servers. Google’s privacy policy is at <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>. Boondox is not directed at children, and the ads are not child-directed. When About shows Ad privacy choices, you can change a consent decision there.</p>
+
+    <h2>Photos</h2>
+    <p>If you tap Save image, Boondox writes the survival card into your photo library. We do not upload that image, and we do not read the rest of your photos.</p>
+
+    <h2>On your device</h2>
+    <p>Boondox saves your appearance and unit choices, and the coarse footprint cells this device has already counted. Deleting the app removes them.</p>
+
+    <h2>Place data</h2>
+    <p>The United States chart is SimpleMaps business location data, used under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. The Canada chart is © OpenStreetMap contributors, under the <a href="https://www.openstreetmap.org/copyright">ODbL</a>. Both charts ship inside the app. They are not information about you.</p>
+
+    <h2>Children</h2>
+    <p>Boondox is not directed at children under 13, and we do not knowingly collect personal information from them.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy go to <a href="mailto:contact@ggrls.co">contact@ggrls.co</a>. If we change what the app does with information, we will change the date at the top of this page.</p>
+  </main>
+  <footer>
+    <span class="footer-copy">© 2026 GGRLS Software</span>
+    <nav class="footer-links">
+      <a href="/boondox/support">Support</a>
+      <a href="/">Home</a>
+    </nav>
+  </footer>
+</body>
+</html>
