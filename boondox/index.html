@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boondox — How far out are you?</title>
+  <meta name="description" content="Boondox tells you how far you are from civilization. One number, six zones, from the middle of town to the abyss." />
+  <link rel="canonical" href="https://www.ggrls.co/boondox" />
+  <meta property="og:title" content="Boondox — How far out are you?" />
+  <meta property="og:description" content="One number, six zones, from the middle of town to the abyss." />
+  <meta property="og:image" content="https://www.ggrls.co/boondox/hero.jpg" />
+  <meta property="og:url" content="https://www.ggrls.co/boondox" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0c0d10;
+      --bg2: #12141a;
+      --border: rgba(255,255,255,0.07);
+      --text: #e8eaf0;
+      --muted: rgba(232,234,240,0.72);
+      --faint: rgba(232,234,240,0.45);
+      --peach: #e0a15a;
+    }
+    body {
+      font-family: "DM Sans", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(12,13,16,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(20px, 5vw, 60px);
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .wordmark {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .wordmark span { color: var(--faint); font-weight: 400; }
+    .nav-contact {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--faint);
+      text-decoration: none;
+    }
+    .nav-contact:hover { color: var(--text); }
+    .hero {
+      width: min(1024px, 100%);
+      margin: 0 auto;
+    }
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    main {
+      width: min(640px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: clamp(36px, 6vw, 64px) 0 clamp(72px, 10vw, 120px);
+      text-align: center;
+    }
+    .lead {
+      font-size: clamp(17px, 2.2vw, 19px);
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 1.6;
+      color: var(--muted);
+      text-wrap: pretty;
+    }
+    .stores {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .store {
+      min-width: 168px;
+      padding: 14px 22px 13px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: var(--bg2);
+      text-align: left;
+    }
+    .store-name {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .store-soon {
+      display: block;
+      margin-top: 2px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--peach);
+    }
+    footer {
+      margin-top: auto;
+      border-top: 1px solid var(--border);
+      padding: 28px clamp(20px, 5vw, 60px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-copy, .footer-links a {
+      font-size: 13px;
+      color: var(--faint);
+      text-decoration: none;
+    }
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a:hover { color: var(--text); }
+    @media (max-width: 600px) {
+      footer { justify-content: center; text-align: center; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="wordmark">GGRLS <span>Software</span></a>
+    <a href="mailto:contact@ggrls.co" class="nav-contact">contact@ggrls.co</a>
+  </nav>
+  <header class="hero">
+    <img
+      src="/boondox/hero.jpg"
+      width="1024"
+      height="682"
+      alt="Boondox. How far out are you? Six zones. One number. See where you land."
+    />
+  </header>
+  <main>
+    <h1 class="lead">Boondox tells you how far you are from civilization. One number, six zones, from the middle of town to the abyss.</h1>
+    <ul class="stores">
+      <li class="store">
+        <span class="store-name">App Store</span>
+        <span class="store-soon">Coming soon</span>
+      </li>
+      <li class="store">
+        <span class="store-name">Google Play</span>
+        <span class="store-soon">Coming soon</span>
+      </li>
+    </ul>
+  </main>
+  <footer>
+    <span class="footer-copy">© 2026 GGRLS Software</span>
+    <nav class="footer-links">
+      <a href="/boondox/privacy">Privacy</a>
+      <a href="/boondox/support">Support</a>
+      <a href="/">Home</a>
+    </nav>
+  </footer>
+</body>
+</html>

@@ -274,35 +274,7 @@
     .product-card--hflow  .product-link-row { color: #818cf8; }
     .product-card--wheech .product-link-row { color: #a3e635; }
     .product-card--crujd  .product-link-row { color: #fb7185; }
-
-    .product-links {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px 18px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .product-links a {
-      color: #f0c48a;
-      font-size: 13px;
-      font-weight: 600;
-      line-height: 1.2;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      padding: 14px 0;
-      margin: -14px 0;
-    }
-
-    .product-links a:hover { color: #f8dfc0; }
-
-    .product-links a:focus-visible {
-      outline: 2px solid #f0c48a;
-      outline-offset: 3px;
-      border-radius: 4px;
-    }
+    .product-card--boondox .product-link-row { color: #f0c48a; }
 
     .product-link-row svg {
       transition: transform 0.15s;
@@ -496,18 +468,20 @@
       </a>
 
       <!-- Boondox -->
-      <article class="product-card product-card--boondox">
+      <a href="/boondox" class="product-card product-card--boondox">
         <div class="product-header">
           <div class="product-dot"></div>
           <span class="product-badge">Coming soon</span>
         </div>
         <div class="product-name">Boondox</div>
         <p class="product-desc">How far are you from civilization? Find out with this cool free app!</p>
-        <div class="product-links">
-          <a href="/boondox/privacy">Privacy policy</a>
-          <a href="/boondox/support">Support</a>
+        <div class="product-link-row">
+          Learn more
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2.5 11.5L11.5 2.5M11.5 2.5H5.5M11.5 2.5V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
-      </article>
+      </a>
 
     </div>
   </section>
