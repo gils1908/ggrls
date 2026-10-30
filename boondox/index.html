@@ -89,10 +89,19 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      align-items: stretch;
       gap: 12px;
       margin-top: 32px;
+      padding: 0;
+    }
+    .stores > li {
+      flex: 0 0 auto;
+      min-width: 168px;
+      max-width: 100%;
     }
     .store {
+      display: block;
+      width: 100%;
       min-width: 168px;
       padding: 14px 22px 13px;
       border-radius: 14px;
@@ -144,6 +153,13 @@
     .footer-links a:hover { color: var(--text); }
     @media (max-width: 600px) {
       footer { justify-content: center; text-align: center; flex-direction: column; }
+      .stores {
+        flex-direction: column;
+        align-items: center;
+      }
+      .stores > li {
+        width: min(280px, 100%);
+      }
     }
   </style>
 </head>
@@ -169,9 +185,11 @@
           <span class="store-status">Download free</span>
         </a>
       </li>
-      <li class="store store--pending">
-        <span class="store-name">Google Play</span>
-        <span class="store-status">Coming soon</span>
+      <li>
+        <div class="store store--pending">
+          <span class="store-name">Google Play</span>
+          <span class="store-status">Coming soon</span>
+        </div>
       </li>
     </ul>
   </main>
