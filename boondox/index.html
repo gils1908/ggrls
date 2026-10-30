@@ -100,18 +100,30 @@
       background: var(--bg2);
       text-align: left;
     }
+    a.store {
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    a.store:hover {
+      border-color: rgba(224,161,90,0.35);
+      transform: translateY(-2px);
+    }
     .store-name {
       display: block;
       font-size: 16px;
       font-weight: 600;
       letter-spacing: -0.02em;
     }
-    .store-soon {
+    .store-status {
       display: block;
       margin-top: 2px;
       font-size: 13px;
       font-weight: 600;
       color: var(--peach);
+    }
+    .store--pending .store-status {
+      color: var(--faint);
     }
     footer {
       margin-top: auto;
@@ -151,13 +163,15 @@
   <main>
     <h1 class="lead">Boondox tells you how far you are from civilization. One number, six zones, from the middle of town to the abyss.</h1>
     <ul class="stores">
-      <li class="store">
-        <span class="store-name">App Store</span>
-        <span class="store-soon">Coming soon</span>
+      <li>
+        <a class="store" href="https://apps.apple.com/us/app/boondox/id6823010741" target="_blank" rel="noopener noreferrer">
+          <span class="store-name">App Store</span>
+          <span class="store-status">Download free</span>
+        </a>
       </li>
-      <li class="store">
+      <li class="store store--pending">
         <span class="store-name">Google Play</span>
-        <span class="store-soon">Coming soon</span>
+        <span class="store-status">Coming soon</span>
       </li>
     </ul>
   </main>
